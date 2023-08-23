@@ -19,11 +19,6 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'A product must have a price'],
   },
-  summary: {
-    type: String,
-    required: [true, 'A product must have a summary'],
-    trim: true,
-  },
   description: {
     type: String,
     required: [true, 'A product must have a description'],
@@ -36,3 +31,7 @@ const productSchema = new mongoose.Schema({
   },
   startDates: [Date],
 });
+
+const Product = mongoose.model('Tour', productSchema);
+
+module.exports = Product;

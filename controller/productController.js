@@ -23,7 +23,6 @@ exports.getPorducts = async (req, res) => {
 exports.getProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
-    // product.find({"_id": req.params.id})
     res.status(200).json({
       status: 'success',
       result: product.length,
